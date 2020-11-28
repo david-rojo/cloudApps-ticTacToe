@@ -2,7 +2,7 @@ package cloudapps.tictactoe.models;
 
 public class State {
 	
-	private StateValue value;
+	private StateValue stateValue;
 	
 	private String[] possibleValues = new String[] {"INITIAL", "IN_GAME", "RESUME", "EXIT"};
 	
@@ -10,16 +10,16 @@ public class State {
 	
 	public State() {
 		index = 0;
-		value = StateValue.INITIAL;
+		stateValue = StateValue.INITIAL;
 	}
 	
 	public void next() {
 		index++;
-		value = StateValue.values()[this.value.ordinal() + 1];
+		stateValue = StateValue.values()[this.stateValue.ordinal() + 1];
 	}
 	
-	public StateValue getValue() {
-		return value;
+	public StateValue getStateValue() {
+		return stateValue;
 	}
 	
 	
