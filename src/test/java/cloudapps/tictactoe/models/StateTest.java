@@ -17,7 +17,7 @@ class StateTest {
 	
 	@Test
 	void testGivenNewStateWhenGetValueStateThenIsInitial() {
-		assertThat(this.state.getValue(), is("INITIAL"));
+		assertThat(this.state.getValue(), is(StateValue.INITIAL));
 	}
 	
 	@Test
