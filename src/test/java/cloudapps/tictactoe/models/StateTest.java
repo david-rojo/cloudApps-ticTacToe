@@ -30,7 +30,7 @@ class StateTest {
     void testGivenNewStateWhenDoTwoNextAndGetValueStateThenIsResume() {
 		state.next();
 		state.next();
-		assertThat(this.state.getValue(), is("RESUME"));
+		assertThat(this.state.getValue(), is(StateValue.RESUME));
     }
 	
 	@Test
