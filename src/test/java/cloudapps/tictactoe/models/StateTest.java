@@ -34,9 +34,11 @@ class StateTest {
     }
 	
 	@Test
-    public void testGivenNewStateWhenDoThreeNextAndGetValueStateThenIsExit() {
-
-    }
-	
+    void testGivenNewStateWhenDoThreeNextAndGetValueStateThenIsExit() {
+		state.next();
+		state.next();
+		state.next();
+		assertThat(this.state.getValue(), is("EXIT"));
+    }	
 	
 }
