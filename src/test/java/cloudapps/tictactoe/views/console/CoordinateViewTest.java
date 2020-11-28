@@ -2,7 +2,7 @@ package cloudapps.tictactoe.views.console;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
@@ -28,7 +28,6 @@ class CoordinateViewTest {
     @InjectMocks
     private CoordinateView coordinateView = new CoordinateView();
 
-    @Disabled
     @Test
     void testGivenNewCoordinateViewWhenReadCoordinateThenIsCorrect() throws IOException {
     	when(this.console.readInt("Row: ")).thenReturn(1);
@@ -42,20 +41,21 @@ class CoordinateViewTest {
     @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow4AndColumn4ThenAssertionException() {
-        when(this.console.readInt("Row: ")).thenReturn(4);
-        when(this.console.readInt("Column: ")).thenReturn(4);
-        Assertions.assertThrows(AssertionError.class, () -> {
-        	this.coordinateView.read("Title");
-		});
-        verify(this.console).readInt("Row: ");
-        verify(this.console).readInt("Column: ");
-    }
+    	 when(this.console.readInt("Row: ")).thenReturn(0);
+         when(this.console.readInt("Column: ")).thenReturn(0);
+         Assertions.assertThrows(AssertionError.class, () -> {
+         	this.coordinateView.read("Title");
+         });        
+         verify(this.console).readInt("Row: ");
+         verify(this.console).readInt("Column: ");
 
+    }
+    
     @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow0AndColumn0ThenAssertionException() {
-        when(this.console.readInt("Row: ")).thenReturn(0);
-        when(this.console.readInt("Column: ")).thenReturn(0);
+        when(this.console.readInt("Row: ")).thenReturn(0).thenReturn(1);
+        when(this.console.readInt("Column: ")).thenReturn(0).thenReturn(1);
         Assertions.assertThrows(AssertionError.class, () -> {
         	this.coordinateView.read("Title");
 		});        
@@ -63,7 +63,6 @@ class CoordinateViewTest {
         verify(this.console).readInt("Column: ");
     }
 
-    @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow1AndColumn1ThenIsCorrect() {
         when(this.console.readInt("Row: ")).thenReturn(1);
@@ -73,7 +72,6 @@ class CoordinateViewTest {
         verify(this.console).readInt("Column: ");
     }
 
-    @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow3AndColumn3ThenIsCorrect() {
         when(this.console.readInt("Row: ")).thenReturn(3);

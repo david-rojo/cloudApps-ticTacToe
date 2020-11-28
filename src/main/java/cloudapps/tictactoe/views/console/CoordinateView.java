@@ -5,9 +5,14 @@ import cloudapps.tictactoe.models.Error;
 import cloudapps.utils.Console;
 
 public class CoordinateView {
+	
+	private Console console;
+	
+	public CoordinateView() {
+		console = Console.instance();		
+	}
 
     public Coordinate read(String title) {
-        Console console = Console.instance();
         Coordinate coordinate;
         Error error;
         do {
