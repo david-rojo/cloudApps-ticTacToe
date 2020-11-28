@@ -4,7 +4,7 @@ public class State {
 	
 	private String value;
 	
-	private String[] possibleValues = new String[] {"INITIAL", "IN_GAME"};
+	private String[] possibleValues = new String[] {"INITIAL", "IN_GAME", "RESUME"};
 	
 	private int index;
 	
