@@ -2,13 +2,12 @@ package cloudapps.tictactoe.views.console;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -38,11 +37,10 @@ class CoordinateViewTest {
         assertThat(coordinateRead.getColumn(), is(coordinateExpected.getColumn()));
     }
 
-    @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow4AndColumn4ThenAssertionException() {
-    	 when(this.console.readInt("Row: ")).thenReturn(0);
-         when(this.console.readInt("Column: ")).thenReturn(0);
+    	 when(this.console.readInt("Row: ")).thenReturn(4).thenReturn(1);
+         when(this.console.readInt("Column: ")).thenReturn(4).thenReturn(1);
          Assertions.assertThrows(AssertionError.class, () -> {
          	this.coordinateView.read("Title");
          });        
@@ -51,7 +49,6 @@ class CoordinateViewTest {
 
     }
     
-    @Disabled
     @Test
     void testGivenNewCoordinatesWhenRow0AndColumn0ThenAssertionException() {
         when(this.console.readInt("Row: ")).thenReturn(0).thenReturn(1);
