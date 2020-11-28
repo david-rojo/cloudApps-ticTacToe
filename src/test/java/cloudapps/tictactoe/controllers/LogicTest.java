@@ -2,6 +2,7 @@ package cloudapps.tictactoe.controllers;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,11 @@ class LogicTest {
 	@Test
 	void testGivenNewLogicWhenGetControllerThenController() {
 		assertThat(this.logic.getController(), instanceOf(Controller.class));
+	}
+	
+	@Test
+	void testGivenNewLogicWhenGetControllerThenNotNull() {
+		assertNotNull(this.logic.getController());
 	}
 
 }
