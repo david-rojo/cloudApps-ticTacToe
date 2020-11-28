@@ -23,7 +23,7 @@ class StateTest {
 	@Test
     void testGivenNewStateWhenDoNextAndGetValueStateThenIsInGame() {
 		state.next();
-		assertThat(this.state.getValue(), is("IN_GAME"));
+		assertThat(this.state.getValue(), is(StateValue.IN_GAME));
     }
 	
 	@Test
