@@ -4,8 +4,18 @@ public class State {
 	
 	private String value;
 	
+	private String[] possibleValues = new String[] {"INITIAL", "IN_GAME"};
+	
+	private int index;
+	
 	public State() {
-		value = "INITIAL";
+		index = 0;
+		value = possibleValues[index];
+	}
+	
+	public void next() {
+		index++;
+		value = possibleValues[index];
 	}
 	
 	public String getValue() {
