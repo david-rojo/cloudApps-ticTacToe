@@ -38,7 +38,7 @@ class StateTest {
 		state.next();
 		state.next();
 		state.next();
-		assertThat(this.state.getValue(), is("EXIT"));
+		assertThat(this.state.getValue(), is(StateValue.EXIT));
     }	
 	
 }
