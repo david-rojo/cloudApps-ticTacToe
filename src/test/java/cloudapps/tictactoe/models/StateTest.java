@@ -17,20 +17,20 @@ class StateTest {
 	
 	@Test
 	void testGivenNewStateWhenGetValueStateThenIsInitial() {
-		assertThat(this.state.getValue(), is(StateValue.INITIAL));
+		assertThat(this.state.getStateValue(), is(StateValue.INITIAL));
 	}
 	
 	@Test
     void testGivenNewStateWhenDoNextAndGetValueStateThenIsInGame() {
 		state.next();
-		assertThat(this.state.getValue(), is(StateValue.IN_GAME));
+		assertThat(this.state.getStateValue(), is(StateValue.IN_GAME));
     }
 	
 	@Test
     void testGivenNewStateWhenDoTwoNextAndGetValueStateThenIsResume() {
 		state.next();
 		state.next();
-		assertThat(this.state.getValue(), is(StateValue.RESUME));
+		assertThat(this.state.getStateValue(), is(StateValue.RESUME));
     }
 	
 	@Test
@@ -38,7 +38,7 @@ class StateTest {
 		state.next();
 		state.next();
 		state.next();
-		assertThat(this.state.getValue(), is(StateValue.EXIT));
+		assertThat(this.state.getStateValue(), is(StateValue.EXIT));
     }	
 	
 }
