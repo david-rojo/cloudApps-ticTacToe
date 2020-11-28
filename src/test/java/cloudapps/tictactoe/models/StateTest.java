@@ -1,5 +1,8 @@
 package cloudapps.tictactoe.models;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +17,7 @@ class StateTest {
 	
 	@Test
 	void testGivenNewStateWhenGetValueStateThenIsInitial() {
-		
+		assertThat(this.state.getValue(), is("INITIAL"));
 	}
 	
 	@Test
