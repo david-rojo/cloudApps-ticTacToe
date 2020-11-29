@@ -20,6 +20,9 @@ class StartControllerTest {
 	@Mock
 	private Game game;
 	
+	@Mock
+	private ControllersVisitor controllersVisitor;
+	
 	@InjectMocks
     private StartController startController;
 		
@@ -31,7 +34,8 @@ class StartControllerTest {
 	
 	@Test
 	void testGivenStartControllerWhenAcceptThenControllersVisitorVisit() {
-
+		this.startController.accept(this.controllersVisitor);
+		verify(this.controllersVisitor).visit(this.startController);
 	}
 
 }
