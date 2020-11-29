@@ -29,4 +29,9 @@ class ResumeControllerTest {
 	    verify(this.state).reset();
 	    verify(this.game).reset();	    
 	}
+	
+	@Test
+	void testGivenResumeControllerWhenAcceptThenControllersVisitorVisit() {
+
+	}
 }
