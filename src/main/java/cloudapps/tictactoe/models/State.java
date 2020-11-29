@@ -8,7 +8,7 @@ public class State {
 		this.reset();
 	}
 	
-	private void reset() {
+	public void reset() {
 		this.stateValue = StateValue.INITIAL;
 	}
 	

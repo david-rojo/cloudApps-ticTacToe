@@ -19,7 +19,7 @@ public class Logic {
 		this.controllers = new HashMap<StateValue, Controller>();
 	    this.controllers.put(StateValue.INITIAL, new StartController(this.game, this.state));
 	    this.controllers.put(StateValue.IN_GAME, new PlayController(this.game));
-	    this.controllers.put(StateValue.RESUME, new ResumeController(this.game));
+	    this.controllers.put(StateValue.RESUME, new ResumeController(this.game, this.state));
 	    this.controllers.put(StateValue.EXIT, null);
 	}
 	
