@@ -1,30 +1,15 @@
 package cloudapps.tictactoe;
 
 import cloudapps.tictactoe.controllers.Logic;
-import cloudapps.tictactoe.controllers.PlayController;
-import cloudapps.tictactoe.controllers.ResumeController;
-import cloudapps.tictactoe.controllers.StartController;
 import cloudapps.tictactoe.controllers.UseCaseController;
-import cloudapps.tictactoe.models.Game;
-import cloudapps.tictactoe.models.State;
 import cloudapps.tictactoe.views.console.View;
 
 public abstract class TicTacToe {
 
-    private Game game;
-    private StartController startController;
-    private PlayController playController;
-    private ResumeController resumeController;
     private View view;
-    private State state;
     private Logic logic;
 
     protected TicTacToe() {
-        this.game = new Game();
-        this.state = new State();
-        this.startController = new StartController(this.game, this.state);
-        this.playController = new PlayController(this.game, this.state);
-        this.resumeController = new ResumeController(this.game, this.state);
         this.logic = new Logic();
         this.view = this.createView();
     }
