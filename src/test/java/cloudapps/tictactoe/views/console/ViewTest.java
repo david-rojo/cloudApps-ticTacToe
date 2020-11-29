@@ -56,7 +56,8 @@ class ViewTest {
 	
 	@Test
 	void testGivenViewWhenVisitStartControllerThenStartViewInteractWithStartController() {
-		
+		this.view.visit(startController);
+		verify(this.startView).interact(this.startController);
 	}
 
 }
