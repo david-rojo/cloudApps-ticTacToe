@@ -30,4 +30,9 @@ class PlayControllerTest {
 		this.playController.isTicTacToe();
 	    verify(this.state).next();
 	}
+	
+	@Test
+	void testGivenPlayControllerWhenIsNotTicTacToeThenNoNextState() {
+
+	}
 }
