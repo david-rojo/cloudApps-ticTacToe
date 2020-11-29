@@ -10,11 +10,6 @@ public abstract class Controller {
 	protected Game game;
 	protected State state;
 
-	Controller(Game game) {
-		assert game != null;
-		this.game = game;
-	}
-	
 	Controller(Game game, State state) {
 		assert game != null;
 		assert state != null;
