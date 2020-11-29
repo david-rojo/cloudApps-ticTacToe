@@ -30,7 +30,7 @@ public class View extends cloudapps.tictactoe.views.View implements ControllersV
 
 	@Override
 	public void visit(PlayController playController) {
-		
+		this.playView.interact(playController);
 	}
 
 	@Override
