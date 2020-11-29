@@ -23,7 +23,7 @@ public class StartController extends UseCaseController {
 
 	@Override
 	public void accept(ControllersVisitor controllersVisitor) {
-		
+		controllersVisitor.visit(this);
 	}
 
 }
