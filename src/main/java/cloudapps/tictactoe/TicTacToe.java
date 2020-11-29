@@ -4,6 +4,7 @@ import cloudapps.tictactoe.controllers.Logic;
 import cloudapps.tictactoe.controllers.PlayController;
 import cloudapps.tictactoe.controllers.ResumeController;
 import cloudapps.tictactoe.controllers.StartController;
+import cloudapps.tictactoe.controllers.UseCaseController;
 import cloudapps.tictactoe.models.Game;
 import cloudapps.tictactoe.models.State;
 import cloudapps.tictactoe.views.console.View;
@@ -25,12 +26,18 @@ public abstract class TicTacToe {
         this.playController = new PlayController(this.game, this.state);
         this.resumeController = new ResumeController(this.game, this.state);
         this.logic = new Logic();
-        this.view = this.createView(this.startController, this.playController, this.resumeController);
+        this.view = this.createView();
     }
 
-    protected abstract View createView(StartController startController, PlayController playController, ResumeController resumeController2);
+    protected abstract View createView();
 
     protected void play() {
-        this.view.interact();
+    	UseCaseController controller;
+		do {
+            controller = this.logic.getController();
+            if (controller != null) {
+                this.view.interact(controller);
+            }
+		} while (controller != null);
     }
 }
