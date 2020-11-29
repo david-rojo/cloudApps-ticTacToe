@@ -51,7 +51,7 @@ class ViewTest {
 	@Test
 	void testGivenViewWhenInteractResumeControllerThenResumeViewInteractWithResumeController() {
 		this.view.interact(resumeController);
-	    verify(this.resumeView).interact(this.resumeController);
+		verify(this.resumeController).accept(this.view);
 	}
 
 }
