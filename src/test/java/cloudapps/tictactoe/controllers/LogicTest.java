@@ -18,7 +18,7 @@ class LogicTest {
 	
 	@Test
 	void testGivenNewLogicWhenGetControllerThenController() {
-		assertThat(this.logic.getController(), instanceOf(Controller.class));
+		assertThat(this.logic.getController(), instanceOf(UseCaseController.class));
 	}
 	
 	@Test

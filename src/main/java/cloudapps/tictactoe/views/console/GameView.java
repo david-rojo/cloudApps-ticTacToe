@@ -1,14 +1,14 @@
 package cloudapps.tictactoe.views.console;
 
-import cloudapps.tictactoe.controllers.Controller;
+import cloudapps.tictactoe.controllers.UseCaseController;
 import cloudapps.tictactoe.models.Coordinate;
 import cloudapps.tictactoe.views.Message;
 
 class GameView {
     
-  private Controller controller;
+  private UseCaseController controller;
 
-  GameView(Controller controller) {
+  GameView(UseCaseController controller) {
     this.controller = controller;
   }
 

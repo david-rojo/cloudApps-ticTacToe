@@ -6,7 +6,7 @@ import cloudapps.tictactoe.models.Game;
 import cloudapps.tictactoe.models.State;
 import cloudapps.tictactoe.models.Token;
 
-public class PlayController extends Controller {
+public class PlayController extends UseCaseController {
 
 	public PlayController(Game game, State state) {
 		super(game, state);

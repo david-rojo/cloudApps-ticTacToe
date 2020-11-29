@@ -3,7 +3,7 @@ package cloudapps.tictactoe.controllers;
 import cloudapps.tictactoe.models.Game;
 import cloudapps.tictactoe.models.State;
 
-public class StartController extends Controller {
+public class StartController extends UseCaseController {
 
 	public StartController(Game game, State state) {
 		super(game, state);

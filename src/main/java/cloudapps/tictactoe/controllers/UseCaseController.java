@@ -5,12 +5,12 @@ import cloudapps.tictactoe.models.Game;
 import cloudapps.tictactoe.models.State;
 import cloudapps.tictactoe.models.Token;
 
-public abstract class Controller {
+public abstract class UseCaseController {
     
 	protected Game game;
 	protected State state;
 
-	Controller(Game game, State state) {
+	UseCaseController(Game game, State state) {
 		assert game != null;
 		assert state != null;
 		this.game = game;
