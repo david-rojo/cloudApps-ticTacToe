@@ -59,5 +59,10 @@ class ViewTest {
 		this.view.visit(startController);
 		verify(this.startView).interact(this.startController);
 	}
+	
+	@Test
+	void testGivenViewWhenVisitPlayControllerThenPlayViewInteractWithPlayController() {
+
+	}
 
 }
