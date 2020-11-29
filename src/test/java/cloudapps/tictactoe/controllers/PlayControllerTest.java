@@ -38,4 +38,9 @@ class PlayControllerTest {
 		this.playController.isTicTacToe();
 		verifyNoInteractions(this.state);
 	}
+	
+	@Test
+	void testGivenPlayControllerWhenAcceptThenControllersVisitorVisit() {
+		
+	}
 }
