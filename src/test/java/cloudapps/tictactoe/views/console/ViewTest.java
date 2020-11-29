@@ -8,6 +8,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import cloudapps.tictactoe.controllers.PlayController;
 import cloudapps.tictactoe.controllers.StartController;
 
 @ExtendWith(MockitoExtension.class)
@@ -18,6 +19,12 @@ class ViewTest {
 	
 	@Mock
 	private StartController startController;
+	
+	@Mock
+	private PlayView playView;
+	
+	@Mock
+	private PlayController playController;
 	
 	@InjectMocks
 	private View view;
@@ -30,7 +37,8 @@ class ViewTest {
 	
 	@Test
 	void testGivenViewWhenInteractPlayControllerThenPlayViewInteractWithPlayController() {
-
+		this.view.interact(playController);
+	    verify(this.playView).interact(this.playController);
 	}
 
 }
