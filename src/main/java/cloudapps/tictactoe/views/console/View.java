@@ -35,7 +35,7 @@ public class View extends cloudapps.tictactoe.views.View implements ControllersV
 
 	@Override
 	public void visit(ResumeController resumeController) {
-		
+		this.resumeView.interact(resumeController);
 	}
 
 }
