@@ -42,7 +42,7 @@ public class PlayController extends UseCaseController {
 
 	@Override
 	public void accept(ControllersVisitor controllersVisitor) {
-		
+		controllersVisitor.visit(this);
 	}
 
 }
