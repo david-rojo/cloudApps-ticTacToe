@@ -16,7 +16,7 @@ public class ResumeController extends UseCaseController {
 
   @Override
   public void accept(ControllersVisitor controllersVisitor) {
-	  
+	  controllersVisitor.visit(this);
   }
 
 }
