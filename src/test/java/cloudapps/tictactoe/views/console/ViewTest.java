@@ -65,5 +65,10 @@ class ViewTest {
 		this.view.visit(playController);
 		verify(this.playView).interact(this.playController);
 	}
+	
+	@Test
+	void testGivenViewWhenVisitResumeControllerThenResumeViewInteractWithResumeController() {
+
+	}
 
 }
