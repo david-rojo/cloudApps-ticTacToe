@@ -14,4 +14,9 @@ public class ResumeController extends UseCaseController {
     this.state.reset();
   }
 
+  @Override
+  public void accept(ControllersVisitor controllersVisitor) {
+	  
+  }
+
 }

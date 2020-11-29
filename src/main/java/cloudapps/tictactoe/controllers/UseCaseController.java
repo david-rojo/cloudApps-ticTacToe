@@ -21,5 +21,7 @@ public abstract class UseCaseController {
 		assert coordinate != null;
 		return this.game.getToken(coordinate);
 	}
+	
+	public abstract void accept(ControllersVisitor controllersVisitor);
   
 }

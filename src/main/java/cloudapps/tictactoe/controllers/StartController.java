@@ -21,4 +21,9 @@ public class StartController extends UseCaseController {
 		this.state.next();
 	}
 
+	@Override
+	public void accept(ControllersVisitor controllersVisitor) {
+		
+	}
+
 }
