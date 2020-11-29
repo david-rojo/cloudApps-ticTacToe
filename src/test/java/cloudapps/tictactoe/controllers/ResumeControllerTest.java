@@ -20,6 +20,9 @@ class ResumeControllerTest {
 	@Mock
 	private Game game;
 	
+	@Mock
+	private ControllersVisitor controllersVisitor;
+	
 	@InjectMocks
     private ResumeController resumeController;
 	
@@ -32,6 +35,7 @@ class ResumeControllerTest {
 	
 	@Test
 	void testGivenResumeControllerWhenAcceptThenControllersVisitorVisit() {
-
+		this.resumeController.accept(this.controllersVisitor);
+		verify(this.controllersVisitor).visit(this.resumeController);
 	}
 }
