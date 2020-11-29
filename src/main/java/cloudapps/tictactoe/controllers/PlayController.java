@@ -3,12 +3,13 @@ package cloudapps.tictactoe.controllers;
 import cloudapps.tictactoe.models.Coordinate;
 import cloudapps.tictactoe.models.Error;
 import cloudapps.tictactoe.models.Game;
+import cloudapps.tictactoe.models.State;
 import cloudapps.tictactoe.models.Token;
 
 public class PlayController extends Controller {
 
-	public PlayController(Game game) {
-		super(game);
+	public PlayController(Game game, State state) {
+		super(game, state);
 	}
 
 	public boolean isBoardComplete() {
@@ -16,7 +17,11 @@ public class PlayController extends Controller {
 	}
 
 	public boolean isTicTacToe() {
-		return this.game.isTicTacToe();
+		boolean isTicTacToe = this.game.isTicTacToe();
+		if (isTicTacToe) {
+			this.state.next();
+		}
+		return isTicTacToe;
 	}
 
 	public Token getToken() {

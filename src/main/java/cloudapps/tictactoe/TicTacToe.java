@@ -20,7 +20,7 @@ public abstract class TicTacToe {
         this.game = new Game();
         this.state = new State();
         this.startController = new StartController(this.game, this.state);
-        this.playController = new PlayController(this.game);
+        this.playController = new PlayController(this.game, this.state);
         this.resumeController = new ResumeController(this.game, this.state);
         this.view = this.createView(this.startController, this.playController, this.resumeController);
     }
