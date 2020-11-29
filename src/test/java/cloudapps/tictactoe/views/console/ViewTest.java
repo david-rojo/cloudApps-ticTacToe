@@ -53,5 +53,10 @@ class ViewTest {
 		this.view.interact(resumeController);
 		verify(this.resumeController).accept(this.view);
 	}
+	
+	@Test
+	void testGivenViewWhenVisitStartControllerThenStartViewInteractWithStartController() {
+		
+	}
 
 }
