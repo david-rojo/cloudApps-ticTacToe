@@ -1,5 +1,6 @@
 package cloudapps.tictactoe;
 
+import cloudapps.tictactoe.controllers.Logic;
 import cloudapps.tictactoe.controllers.PlayController;
 import cloudapps.tictactoe.controllers.ResumeController;
 import cloudapps.tictactoe.controllers.StartController;
@@ -15,6 +16,7 @@ public abstract class TicTacToe {
     private ResumeController resumeController;
     private View view;
     private State state;
+    private Logic logic;
 
     protected TicTacToe() {
         this.game = new Game();
@@ -22,6 +24,7 @@ public abstract class TicTacToe {
         this.startController = new StartController(this.game, this.state);
         this.playController = new PlayController(this.game, this.state);
         this.resumeController = new ResumeController(this.game, this.state);
+        this.logic = new Logic();
         this.view = this.createView(this.startController, this.playController, this.resumeController);
     }
 
