@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import cloudapps.tictactoe.controllers.PlayController;
+import cloudapps.tictactoe.controllers.ResumeController;
 import cloudapps.tictactoe.controllers.StartController;
 
 @ExtendWith(MockitoExtension.class)
@@ -25,6 +26,12 @@ class ViewTest {
 	
 	@Mock
 	private PlayController playController;
+	
+	@Mock
+	private ResumeView resumeView;
+	
+	@Mock
+	private ResumeController resumeController;
 	
 	@InjectMocks
 	private View view;
@@ -43,7 +50,8 @@ class ViewTest {
 	
 	@Test
 	void testGivenViewWhenInteractResumeControllerThenResumeViewInteractWithResumeController() {
-		
+		this.view.interact(resumeController);
+	    verify(this.resumeView).interact(this.resumeController);
 	}
 
 }
