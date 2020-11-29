@@ -25,7 +25,7 @@ public class View extends cloudapps.tictactoe.views.View implements ControllersV
 
 	@Override
 	public void visit(StartController startController) {
-		
+		this.startView.interact(startController);
 	}
 
 	@Override
