@@ -1,11 +1,12 @@
 package cloudapps.tictactoe.views.console;
 
+import cloudapps.tictactoe.controllers.ControllersVisitor;
 import cloudapps.tictactoe.controllers.PlayController;
 import cloudapps.tictactoe.controllers.ResumeController;
 import cloudapps.tictactoe.controllers.StartController;
 import cloudapps.tictactoe.controllers.UseCaseController;
 
-public class View extends cloudapps.tictactoe.views.View {
+public class View extends cloudapps.tictactoe.views.View implements ControllersVisitor {
 
 	private StartView startView;
 	private PlayView playView;
@@ -26,6 +27,21 @@ public class View extends cloudapps.tictactoe.views.View {
 		} else {
 			this.resumeView.interact((ResumeController) controller);
 		}
+	}
+
+	@Override
+	public void visit(StartController startController) {
+		
+	}
+
+	@Override
+	public void visit(PlayController playController) {
+		
+	}
+
+	@Override
+	public void visit(ResumeController resumeController) {
+		
 	}
 
 }
