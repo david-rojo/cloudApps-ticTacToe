@@ -28,5 +28,10 @@ class StartControllerTest {
 		this.startController.start();
 	    verify(this.state).next();
 	}
+	
+	@Test
+	void testGivenStartControllerWhenAcceptThenControllersVisitorVisit() {
+
+	}
 
 }
