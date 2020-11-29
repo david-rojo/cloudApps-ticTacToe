@@ -1,6 +1,7 @@
 package cloudapps.tictactoe.views.console;
 
 import cloudapps.tictactoe.controllers.PlayController;
+import cloudapps.tictactoe.controllers.ResumeController;
 import cloudapps.tictactoe.controllers.StartController;
 import cloudapps.tictactoe.controllers.UseCaseController;
 
@@ -20,8 +21,10 @@ public class View extends cloudapps.tictactoe.views.View {
 	public void interact(UseCaseController controller) {
 		if (controller instanceof StartController) {
 			this.startView.interact((StartController) controller);
-		} else {
+		} else if (controller instanceof PlayController) {
 			this.playView.interact((PlayController) controller);
+		} else {
+			this.resumeView.interact((ResumeController) controller);
 		}
 	}
 
