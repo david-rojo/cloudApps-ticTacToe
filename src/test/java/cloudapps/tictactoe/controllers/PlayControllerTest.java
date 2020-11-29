@@ -1,5 +1,6 @@
 package cloudapps.tictactoe.controllers;
 
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -33,6 +34,8 @@ class PlayControllerTest {
 	
 	@Test
 	void testGivenPlayControllerWhenIsNotTicTacToeThenNoNextState() {
-
+		when(this.game.isTicTacToe()).thenReturn(false);
+		this.playController.isTicTacToe();
+		verifyNoInteractions(this.state);
 	}
 }
